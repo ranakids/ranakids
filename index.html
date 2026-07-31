@@ -1,62 +1,195 @@
 <!DOCTYPE html>
-<html>
+<html lang="mn">
 <head>
     <meta charset="UTF-8">
-    <title>Ranakids - Хүүхдийн хувцас</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranakids - Үндэсний хэв маягтай хүүхдийн хувцас</title>
     <style>
+        /* Монгол хэв маягийн үндсэн өнгөний тохиргоо */
         body {
-            background-color: #fce4ec;
-            font-family: Arial, sans-serif;
+            background-color: #f7f5f0; /* Зөөлөн цайвар суурь */
+            color: #2c2c2c;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Толгой хэсэг - Хөх цэнхэр болон алтан шаргал өнгө */
+        header {
+            background-color: #0f2a4a; /* Гүн хөх өнгө */
+            color: #d4af37; /* Алтан шаргал өнгө */
             text-align: center;
-            color: #333333;
+            padding: 40px 20px;
+            border-bottom: 4px solid #d4af37;
         }
-        h1 {
-            color: #e91e63;
+
+        header h1 {
+            margin: 0;
+            font-size: 42px;
+            letter-spacing: 2px;
         }
-        .product {
-            background-color: white;
-            width: 300px;
-            padding: 20px;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+        header p {
+            color: #ffffff;
+            font-size: 18px;
+            margin-top: 10px;
         }
-        img {
-            width: 100%;
-            border-radius: 5px;
+
+        /* Бүтээгдэхүүний жагсаалт харагдах хэсэг */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
-        .price {
-            font-size: 20px;
-            font-weight: bold;
-            color: #ff5722;
-        }
-        /* Фэйсбүүк товчлуурын загвар */
-        .btn-order {
+
+        .section-title {
+            text-align: center;
+            color: #0f2a4a;
+            font-size: 28px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #d4af37;
             display: inline-block;
-            background-color: #1877F2;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
+            padding-bottom: 5px;
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        /* Барааны картны загвар */
+        .product-card {
+            background-color: #ffffff;
+            border: 1px solid #e2d8c3;
+            border-radius: 12px;
+            width: 300px;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+        }
+
+        .product-details {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-details h3 {
+            margin: 0 0 10px 0;
+            color: #0f2a4a;
+            font-size: 20px;
+        }
+
+        .product-details p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .price {
+            font-size: 22px;
             font-weight: bold;
-            margin-top: 15px;
+            color: #b81414; /* Барааны үнэ - улаан өнгөөр */
+            margin-bottom: 15px;
+        }
+
+        /* Захиалах товчлуур */
+        .btn-order {
+            display: block;
+            background-color: #0f2a4a;
+            color: #d4af37;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            border: 1px solid #d4af37;
+            transition: 0.3s;
+        }
+
+        .btn-order:hover {
+            background-color: #d4af37;
+            color: #0f2a4a;
+        }
+
+        /* Хөл хэсэг */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #0f2a4a;
+            color: #ffffff;
+            margin-top: 50px;
+            border-top: 4px solid #d4af37;
         }
     </style>
 </head>
 <body>
-    <h1>Ranakids дэлгүүрт тавтай морил! 🧸</h1>
-    <p>Бид хамгийн сайн чанарын монгол үндэсний хүүхдийн дээл хувцасыг санал болгож байна.</p>
-    
-    <div class="product">
-        <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=300&q=80" alt="Хүүхдийн хувцас">
-        <h3>Өхөөрдөм цамц (Жишээ)</h3>
-        <p>100% хөвөн даавуун материалтай, биед эвтэйхэн.</p>
-        <p class="price">35,000 ₮</p>
+
+    <!-- Вэбсайтын толгой -->
+    <header>
+        <h1>RANAKIDS</h1>
+        <p>🪡 Үндэсний хэв маягтай хүүхдийн гоёл & дээл хувцас 🇲🇳</p>
+    </header>
+
+    <!-- Үндсэн агуулга -->
+    <div class="container" style="text-align: center;">
+        <h2 class="section-title">Онцлох бүтээгдэхүүнүүд</h2>
         
-        <!-- Захиалах товч -->
-        <a href="https://www.facebook.com/huuhdiinzagwariindeel/" target="_blank" class="btn-order">Фэйсбүүкээр захиалах</a>
+        <div class="product-grid">
+
+            <!-- Бараа 1 -->
+            <div class="product-card">
+                <!-- Энд оруулсан зургийнхаа нэрийг тааруулна -->
+                <img src="deel1.jpg" alt="Монгол дээл">
+                <div class="product-details">
+                    <h3>Хүүхдийн хослол дээл</h3>
+                    <p>100% торгомсог материалтай, хүүхдийн биед эвтэйхэн үндэсний гоёл.</p>
+                    <div class="price">85,000 ₮</div>
+                    <a href="https://www.facebook.com/" target="_blank" class="btn-order">Захиалах (Фэйсбүүк)</a>
+                </div>
+            </div>
+
+            <!-- Бараа 2 -->
+            <div class="product-card">
+                <img src="deel2.jpg" alt="Хүүхдийн хантааз">
+                <div class="product-details">
+                    <h3>Үндэсний хээтэй хантааз</h3>
+                    <p>Өдөр тутам болон баяр ёслолоор өмсөхөд тохиромжтой.</p>
+                    <div class="price">55,000 ₮</div>
+                    <a href="https://www.facebook.com/" target="_blank" class="btn-order">Захиалах (Фэйсбүүк)</a>
+                </div>
+            </div>
+
+            <!-- Бараа 3 -->
+            <div class="product-card">
+                <img src="deel3.jpg" alt="Монгол цамц">
+                <div class="product-details">
+                    <h3>Хүүхдийн энгэртэй цамц</h3>
+                    <p>Зөөлөн даавуун материалтай, үндэсний хээний оруулгатай.</p>
+                    <div class="price">45,000 ₮</div>
+                    <a href="https://www.facebook.com/" target="_blank" class="btn-order">Захиалах (Фэйсбүүк)</a>
+                </div>
+            </div>
+
+        </div>
     </div>
-    
-    <p>Удахгүй манай вэбсайт бүрэн ашиглалтад орох болно. Бидэнтэй хамт байгаарай!</p>
+
+    <!-- Вэбсайтын хөл -->
+    <footer>
+        <p>© Ranakids - Бүх эрх хуулиар хамгаалагдсан</p>
+        <p>Утас: 99xxxxxx | Чат бичих: Ranakids Facebook Page</p>
+    </footer>
+
 </body>
 </html>
